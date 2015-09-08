@@ -1,0 +1,4 @@
+---
+network:
+  - name: defaultrouter
+    networkmasklen: 28

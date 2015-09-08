@@ -1,0 +1,22 @@
+---
+server:
+  - name: master
+    serverplan: 2001
+    sshkey: <%= ENV['SAKURA_SSH_KEYID'] %>
+    volume:
+      diskplan: 4
+      sourcearchive: 112600559854
+    switch: network[defaultrouter]
+    meta:
+      network_offset: 8
+<% 1.upto(4) do |index| %>
+  - name: node-<%= index %>
+    serverplan: 2001
+    sshkey: <%= ENV['SAKURA_SSH_KEYID'] %>
+    volume:
+      diskplan: 4
+      sourcearchive: 112600559854
+    switch: network[defaultrouter]
+    meta:
+      network_offset: <%= 8 + index %>
+<% end %>
