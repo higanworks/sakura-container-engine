@@ -52,3 +52,5 @@ Session.vim
 /vendor/
 /vendoer/
 /.sakuracloud/
+/state/
+Gemfile.development.lock

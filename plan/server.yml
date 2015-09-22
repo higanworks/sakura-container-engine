@@ -7,6 +7,8 @@ server:
       diskplan: 4
       sourcearchive: 112600559854
     switch: network[defaultrouter]
+    interfaces:
+      - network[localswitch1]
     meta:
       network_offset: 8
 <% 1.upto(4) do |index| %>
@@ -17,6 +19,8 @@ server:
       diskplan: 4
       sourcearchive: 112600559854
     switch: network[defaultrouter]
+    interfaces:
+      - network[localswitch1]
     meta:
       network_offset: <%= 8 + index %>
 <% end %>
