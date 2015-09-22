@@ -1,0 +1,18 @@
+#cloud-config
+
+coreos:
+  units:
+    - name: 10-eth1.network
+      content: |
+        [Match]
+        Name=eth1
+
+        [Network]
+        Address=192.168.1.11/24
+    - name: 10-ens4.network
+      content: |
+        [Match]
+        Name=ens4*
+
+        [Network]
+        Address=192.168.1.11/24
